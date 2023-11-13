@@ -16,4 +16,7 @@ public interface Builder {
      함수 헤더 선언
      
      */
+    void createProject(String projectName);
+    Executable build(List<SourceCode> sourceCodes);
+    Executable build(SourceCode[] sourceCodes);
 }
