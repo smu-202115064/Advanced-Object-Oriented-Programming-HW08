@@ -14,6 +14,7 @@ public class CLinker implements Linker {
         System.out.print(INFO_MSG_LINKING);
         StringBuilder sb = new StringBuilder();
         for (ObjectCode objectCode : objFiles) {
+            System.out.println(objectCode.getFileName());
             sb.append('\n').append(objectCode.getFileName());
         }
         return new Executable(exeFileName, sb.toString());
