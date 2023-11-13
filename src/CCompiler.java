@@ -6,7 +6,7 @@ public class CCompiler implements Compiler {
     public ObjectCode compile(SourceCode sourceCode) {
         ObjectCode objectCode;
         System.out.printf(INFO_MSG_COMPILING, sourceCode.getFileName());
-        objectCode = new ObjectCode(sourceCode.getFileName());
+        objectCode = new ObjectCode(sourceCode.getFileName().replace(".c", ".obj"));
         System.out.printf(INFO_MSG_GENERATING, objectCode.getFileName());
         return objectCode;
     }
