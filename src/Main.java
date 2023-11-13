@@ -12,9 +12,9 @@ public class Main {
         아래 코드 수정
         
         */
-        Preprocessor preprocessor = ;
-        Compiler compiler = ;
-        Linker linker = ;
+        Preprocessor preprocessor = new CPreprocessor();
+        Compiler compiler = new CCompiler();
+        Linker linker = new CLinker();
         
         // 프리프로세서, 컴파일러, 링커를 각각 따로 사용해서 exe파일 생성하고 실행
         String[] fileNames = { "a.c", "b.c", "c.c" };
@@ -55,5 +55,14 @@ public class Main {
         코드 추가 
         
         */
+        Builder builder = new IDE();
+
+        builder.createProject("ArrayProject");
+        exe = builder.build(code);
+        exe.execute();
+
+        builder.createProject("ListProject");
+        exe = builder.build(Arrays.asList(code));
+        exe.execute();
     }
 }
