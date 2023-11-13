@@ -1,6 +1,6 @@
 public class CPreprocessor implements Preprocessor {
-    final String INFO_MSG_PREPROCESSING = "Preprocessing C code: %s\n";
-    final String INFO_MSG_GENERATING = "Generating a new C code: %s\n";
+    final String INFO_MSG_PREPROCESSING = "Preprocessing code: %s\n";
+    final String INFO_MSG_GENERATING = "Generating a new code: %s\n";
     final String PREPROCESSED_FILENAME = "preprocessed_%s";
 
     @Override
