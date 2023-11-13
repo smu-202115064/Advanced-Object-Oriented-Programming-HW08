@@ -57,9 +57,13 @@ public class Main {
         */
         Builder builder = new IDE();
 
+        System.out.println("\nIDE에서 소스 코드 배열을 이용해서 빌드 후 실행");
+
         builder.createProject("ArrayProject");
         exe = builder.build(code);
         exe.execute();
+
+        System.out.println("\nIDE에서 소스 코드 리스트를 이용해서 빌드 후 실행");
 
         builder.createProject("ListProject");
         exe = builder.build(Arrays.asList(code));
