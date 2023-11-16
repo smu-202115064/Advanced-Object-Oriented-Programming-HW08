@@ -22,7 +22,12 @@ public class IDE implements Builder {
     }
 
     @Override
-    public Executable build(SourceCode[] sourceCodes) {
-        return build(Arrays.asList(sourceCodes));
+    public Executable build(SourceCode[] files) {
+        ObjectCode[] objs = new ObjectCode[files.length];
+        for (int i = 0; i < files.length; i++) {
+            SourceCode c = preprocessor.preprocess(files[i]);
+            objs[i] = compiler.compile(c);
+        }
+        return linker.link(projectName, objs);
     }
 }

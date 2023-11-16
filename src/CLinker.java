@@ -11,12 +11,12 @@ public class CLinker implements Linker {
 
     @Override
     public Executable link(String exeFileName, List<ObjectCode> objFiles) {
-        System.out.print(INFO_MSG_LINKING);
-        StringBuilder sb = new StringBuilder();
+        String names = "";
         for (ObjectCode objectCode : objFiles) {
-            System.out.println(objectCode.getFileName());
-            sb.append('\n').append(objectCode.getFileName());
+            names += "\n" + objectCode.getFileName();
         }
-        return new Executable(exeFileName, sb.toString());
+        System.out.print(INFO_MSG_LINKING);
+        System.out.println(names);
+        return new Executable(exeFileName, names);
     }
 }
